@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}
+    <title>Generic Template File</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+        <nav class="nav flex-column">
+                <a class="nav-link" href="{% url 'generic'%}">For Generic Page</a>
+                <a class="nav-link" href="{% url 'myapp:specific'%}">For Specific Page</a>
+        </nav>
+{% block body_block %}
+    <h1>Welcome to Generic Templates file </h1>
+    <h2>{{data}}</h2>
+    <img src="{% static 'images/sanapur_lake.jpg' %}" height='400px' width='800px' alt="No Image" srcset="">
+{% endblock body_block %}
+</body>
+</html>
